@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "testforge"
+version = "0.1.0"
+description = "A coding agent harness that generates, runs, and self-corrects unit tests"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "pytest>=7.4",
+]
+
+[project.scripts]
+testforge = "testforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["testforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
